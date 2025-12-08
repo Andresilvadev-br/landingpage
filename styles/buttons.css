@@ -27,6 +27,8 @@
         var(--brand-color-secondary) 0%,
         var(--brand-color-primary) 100%
     );
+    --btn-color: var(--surface-color);
+
 }
 .btn-sm {
     padding: .5rem 1rem;
@@ -41,4 +43,27 @@
 .btn-lg {
     padding: 1rem 2rem;
     font-size: 1.125rem;
+}
+.btn[area-label]{
+    
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        inset: 0.09375rem;
+        background-color: var(--bg-color);
+    }
+
+    &::after{
+
+        content: attr(area-label);
+        background: var(--btn-bg-color);
+        --webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        z-index: 1;
+    }
 }
