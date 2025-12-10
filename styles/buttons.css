@@ -31,9 +31,6 @@
 .btn-md { padding: .75rem 1.5rem; font-size: var(--fs-base); }
 .btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
 
-
-/* ----- efeito especial area-label ----- */
-
 .btn[aria-label] {
     position: relative;
     overflow: hidden;
@@ -43,8 +40,8 @@
     content: "";
     position: absolute;
     inset: 0.09375rem;
-    border-radius: inherit;
     background-color: var(--bg-color);
+    border-radius: inherit;
 }
 
 .btn[aria-label]::after {

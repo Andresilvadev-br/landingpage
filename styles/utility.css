@@ -17,6 +17,11 @@
 .desktop-only { display: none; }
 
 @media (width >= 80em) {
-    .container { --max-width: 80rem; }
-    .desktop-only { display: initial; }
+    .container {
+        --max-width: 80rem;
+    }
+
+    .desktop-only {
+        display: initial;
+    }
 }

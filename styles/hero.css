@@ -22,7 +22,6 @@
 }
 
 @media (width >= 80em) {
-
     #hero {
         background: url(/assets/icons/bg-hero.svg) no-repeat bottom center/contain;
     }
