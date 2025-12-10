@@ -1,42 +1,11 @@
-a.social{
-    --bg-img: "";
-
-background-image: var(--bg-img);
-width: 1.5rem;
-height: 1.5rem;
-display: block;
-
-
--webkit-background-clip: initial;
-background-clip: initial;
+a.social {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    background-size: cover;
 }
 
-
-a[area-label="tiktok"] {
-    background-image: url(/assets/icons/ic_baseline-tiktok.svg);
-
-    &:hover{
-        background-image: url(/assets/icons/Tiktok.svg);
-    }
-}
-a[area-label="discord"] {
-    background-image: url(/assets/icons/ic_baseline-discord.svg);
-
-    &:hover{
-        background-image: url(/assets/icons/discord.svg);
-    }
-}
-a[area-label="twitter"] {
-    background-image: url(/assets/icons/ri_twitter-x-fill.svg);
-
-    &:hover{
-        background-image: url(/assets/icons/Twitter.svg);
-    }
-}
-a[area-label="instagram"] {
-    background-image: url(/assets/icons/mdi_instagram.svg);
-
-    &:hover{
-        background-image: url(/assets/icons/Instagram.svg);
-    }
-}
+a[aria-label="tiktok"]     { background-image: url(/assets/icons/ic_baseline-tiktok.svg); }
+a[aria-label="discord"]    { background-image: url(/assets/icons/ic_baseline-discord.svg); }
+a[aria-label="twitter"]    { background-image: url(/assets/icons/ri_twitter-x-fill.svg); }
+a[aria-label="instagram"]  { background-image: url(/assets/icons/mdi_instagram.svg); }

@@ -2,87 +2,75 @@
     --btn-bg-color: var(--text-color-primary);
     --btn-color: var(--bg-color);
 
+    background: var(--btn-bg-color);
+    color: var(--btn-color);
+
     border: 0;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
 
+    width: fit-content;
     border-radius: .5rem;
 
     font: var(--fw-md) var(--fs-base)/1.5rem var(--ff-sans);
-
-    cursor: pointer;
-
-    background: var(--btn-bg-color);
-    color: var(--btn-color);
-
-    
 }
 
-.btn:hover{
-    --btn-bg-color: linear-gradient(
-        90deg, 
-        var(--brand-color-secondary) 0%,
-        var(--brand-color-primary) 100%
+.btn:hover {
+    background: linear-gradient(
+        90deg,
+        var(--brand-color-secondary),
+        var(--brand-color-primary)
     );
-    --btn-color: var(--surface-color);
-
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    
-    color: var(--btn-color);
-}
-.btn-sm {
-    padding: .5rem 1rem;
-    font-size: var(--ff-sm);
+    color: var(--surface-color);
 }
 
-.btn-md {
-    padding: .75rem 1.5rem;
-    font-size: var(--ff-base);
+.btn-sm { padding: .5rem 1rem; font-size: var(--fs-sm); }
+.btn-md { padding: .75rem 1.5rem; font-size: var(--fs-base); }
+.btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+
+
+/* ----- efeito especial area-label ----- */
+
+.btn[aria-label] {
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
+.btn[aria-label]::before {
+    content: "";
+    position: absolute;
+    inset: 0.09375rem;
+    border-radius: inherit;
+    background-color: var(--bg-color);
 }
-.btn[area-label]{
-    
+
+.btn[aria-label]::after {
+    content: attr(aria-label);
+    z-index: 2;
     position: relative;
 
-    &::before{
-        content: "";
-        position: absolute;
-        border-radius: inherit;
-        inset: 0.09375rem;
-        background-color: var(--bg-color);
-    }
+    background: linear-gradient(
+        90deg,
+        var(--brand-color-secondary),
+        var(--brand-color-primary)
+    );
 
-    &::after{
-
-        content: attr(area-label);
-        background: var(--btn-bg-color);
-        --webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        position: relative;
-        z-index: 1;
-    }
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
-
 
 @media (width >= 80em) {
-    
+    .btn-sm {
+        padding: .75rem 1.5rem;
+        font-size: var(--fs-base);
+    }
 
-.btn-sm {
-    padding: .75rem 1.5rem;
-    font-size: var(--ff-base);
-}
-
-.btn-md {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-}
+    .btn-md {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
 }
